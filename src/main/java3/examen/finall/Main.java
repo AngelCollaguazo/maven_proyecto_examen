@@ -23,11 +23,12 @@ public class Main {
 							opc = lectorInt.nextInt();
 							if (opc == 1) {
 								System.out.println("escoja  el  tipo  de  autoque  desea ingresar: ");
-								System.out.println("a) Auto Naciona");
+								System.out.println("a) Auto Nacional");
 								System.out.println("b) Auto Importado");
 								String tipo = lectorString.nextLine();
 								switch (tipo) {
 								case "a":
+									System.out.println("Auto Nacional");
 									System.out.println("Ingrese marca del auto");
 									String marca = lectorString.nextLine();
 									System.out.println("Ingrese modelo del auto");
@@ -40,11 +41,22 @@ public class Main {
 									String kilometraje = lectorString.nextLine();
 									break;
 								case "b":
-									System.out.println("No existen Pagos");
+									System.out.println("Auto Importado");
+									System.out.println("Ingrese marca del auto");
+									String marca1 = lectorString.nextLine();
+									System.out.println("Ingrese modelo del auto");
+									String modelo1 = lectorString.nextLine();
+									System.out.println("Ingrese Año de fabricación del auto");
+									String anioFabricacion1 = lectorString.nextLine();
+									System.out.println("Ingrese Placa del auto");
+									String placa1 = lectorString.nextLine();
+									System.out.println("Ingrese Kilometraje del auto");
+									String kilometraje1 = lectorString.nextLine();
 									break;
 
 							}
-						} while (opc != 5);
-					}
-
+						} 
+						}while (opc != 5);
+	}
+}
 
