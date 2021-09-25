@@ -8,10 +8,11 @@ public class Auto {
 	private String placa;
 	private int kilometraje;
 	
-	
-	public Auto(String marca2, String modelo2, String anioFabricacion2, String placa2, int kilometraje2) {
-		// TODO Auto-generated constructor stub
+	public Auto( String placa) {
+		
+		this.placa=placa;
 	}
+
 	public String getMarca() {
 		return marca;
 	}

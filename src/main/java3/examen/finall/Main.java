@@ -1,6 +1,7 @@
 package examen.finall;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -67,7 +68,10 @@ public class Main {
 									System.out.println("Ingrese Kilometraje del auto");
 									 kilometraje = lectorInt.nextInt();
 									break;
+									
 								}
+								
+								datos[i]=new Auto(marca);
 								}
 								}else if(opc==2) {
 										System.out.print("Ingrese numero de Placa a Encontrar: ");
@@ -85,7 +89,31 @@ public class Main {
 											System.out.println("No Se encontro");
 										}
 						} 
-							}
+								}else if(opc==3) {
+									System.out.print("Ingrese numero de Placa a Encontrar: ");
+									 String placaBuscar=lectorString.nextLine();
+									 String placa1 = "";
+							
+									for(int i=0;i<datos.length;i++) {
+								Auto autos = datos[i];
+									placa1 = autos.getPlaca();
+									
+									if(placaBuscar.equals(placa1) && placaBuscar==placa) {
+										System.out.println("Se encontro");
+										System.out.println("Ingrese un nuevo kilometraje");
+										int nuevoKilometraje = lectorInt.nextInt();
+									}else {
+										System.out.println("No Se encontro");
+									}
+					} 
+							
+						}else if(opc==4) {
+							Arrays.sort(datos);
+
+							System.out.println("Reporte");
+
+							System.out.println(Arrays.toString(datos));
+						}
 						}while (opc != 5);
 	
 }
