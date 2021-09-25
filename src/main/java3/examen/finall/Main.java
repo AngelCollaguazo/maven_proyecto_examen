@@ -1,5 +1,7 @@
 package examen.finall;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -10,6 +12,13 @@ public class Main {
 				Scanner lectorString = new Scanner(System.in);
 				int opc = 0;
 				String a,b;
+				String marca = "";
+				String modelo = "";
+				String anioFabricacion = "";
+				String placa = "";
+				int kilometraje = 0;
+				
+				Auto [] datos=new Auto[100];
 						do {
 							System.out.println("#######################################");
 							System.out.println("####   CONCESIONARIO AMBACAR       ####");
@@ -22,6 +31,7 @@ public class Main {
 							System.out.println("Ingrese una Opcion: ");
 							opc = lectorInt.nextInt();
 							if (opc == 1) {
+								for(int i=0;i<datos.length;i++) {
 								System.out.println("escoja  el  tipo  de  autoque  desea ingresar: ");
 								System.out.println("a) Auto Nacional");
 								System.out.println("b) Auto Importado");
@@ -29,34 +39,55 @@ public class Main {
 								switch (tipo) {
 								case "a":
 									System.out.println("Auto Nacional");
+									System.out.println("Ingrese Código Nacional");
+									String codigoNacional = lectorString.nextLine();
 									System.out.println("Ingrese marca del auto");
-									String marca = lectorString.nextLine();
+									 marca = lectorString.nextLine();
 									System.out.println("Ingrese modelo del auto");
-									String modelo = lectorString.nextLine();
+									 modelo = lectorString.nextLine();
 									System.out.println("Ingrese Año de fabricación del auto");
-									String anioFabricacion = lectorString.nextLine();
+									 anioFabricacion = lectorString.nextLine();
 									System.out.println("Ingrese Placa del auto");
-									String placa = lectorString.nextLine();
+									 placa = lectorString.nextLine();
 									System.out.println("Ingrese Kilometraje del auto");
-									String kilometraje = lectorString.nextLine();
+									 kilometraje = lectorInt.nextInt();
 									break;
 								case "b":
 									System.out.println("Auto Importado");
+									System.out.println("Ingrese Código Importacion");
+									String codigoImportacion = lectorString.nextLine();
 									System.out.println("Ingrese marca del auto");
-									String marca1 = lectorString.nextLine();
+									 marca = lectorString.nextLine();
 									System.out.println("Ingrese modelo del auto");
-									String modelo1 = lectorString.nextLine();
+									 modelo = lectorString.nextLine();
 									System.out.println("Ingrese Año de fabricación del auto");
-									String anioFabricacion1 = lectorString.nextLine();
+									 anioFabricacion = lectorString.nextLine();
 									System.out.println("Ingrese Placa del auto");
-									String placa1 = lectorString.nextLine();
+									 placa = lectorString.nextLine();
 									System.out.println("Ingrese Kilometraje del auto");
-									String kilometraje1 = lectorString.nextLine();
+									 kilometraje = lectorInt.nextInt();
 									break;
-
-							}
+								}
+								}
+								}else if(opc==2) {
+										System.out.print("Ingrese numero de Placa a Encontrar: ");
+										 String placaBuscar=lectorString.nextLine();
+										 String placa1 = "";
+								
+										for(int i=0;i<datos.length;i++) {
+									Auto autos = datos[i];
+										placa1 = autos.getPlaca();
+										
+										if(placaBuscar.equals(placa1) && placaBuscar==placa) {
+											System.out.println("Se encontro");
+											
+										}else {
+											System.out.println("No Se encontro");
+										}
 						} 
+							}
 						}while (opc != 5);
-	}
+	
+}
 }
 
